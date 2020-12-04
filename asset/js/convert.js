@@ -76,12 +76,6 @@ function convert_file() {
             cell[i].splice(14, 1);
         }
 
-        //to view specific collum data
-        // console.log(i + "->  " + cell[i][6]);
-        // console.log( cell[i][18] );
-
-
-
         //making a result line 
         line_result = "";
         inventory_line = "";
@@ -145,7 +139,6 @@ function convert_file() {
 
                                 if (props_name_and_content[0] == "Composition" || props_name_and_content[0] == "Features") {
 
-                                    // console.log(i + "->" + props_name_and_content[1]);  
                                     if (props_name_and_content[1] == undefined) break;
                                     if (props_name_and_content[1].indexOf(",") == -1) {
                                         main_features += "<li>" + props_name_and_content[1] + "</li>";
@@ -161,7 +154,6 @@ function convert_file() {
                                     // main_features += "</ul>";
                                 } else {
                                     description += "<b>" + props_name_and_content[0] + "</b>" + "<ul>";
-                                    // console.log(i + "->" + props_name_and_content[1]);  
                                     if (props_name_and_content[1] == undefined) break;
                                     if (props_name_and_content[1].indexOf(",") == -1) {
                                         description += "<li>" + props_name_and_content[1] + "</li>";
@@ -180,13 +172,6 @@ function convert_file() {
                         }
                         main_features += "</ul>";
                         body_html = main_features + description + '"';
-                        // console.log(i + "   Main feature->" + main_features);    
-                        // console.log(i + "   Description->" + description);    
-                        // console.log(i + "   Body Html->" + body_html);    
-
-
-
-
 
                         // make_published_flag();
                         if (cell[i][31] == "") { publish_flag = "FALSE"; } else { publish_flag = "TRUE"; }
@@ -238,7 +223,6 @@ function convert_file() {
         }
 
     }
-    // console.log(result);
 }
 
 function save_file() {
