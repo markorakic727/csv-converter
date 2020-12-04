@@ -104,27 +104,7 @@ function convert_file() {
                     //first line of new product
                     {
                         //make handle();
-                        var search, replaceWith;
-                        handle = cell[i][9];
-
-                        search = ' ';
-                        replaceWith = '-';
-                        handle = handle.split(search).join(replaceWith);
-
-                        search = "/";
-                        replaceWith = '-';
-                        handle = handle.split(search).join(replaceWith);
-                        handle = handle.toLowerCase();
-
-                        search = "---";
-                        replaceWith = '-';
-                        handle = handle.split(search).join(replaceWith);
-                        handle = handle.toLowerCase();
-
-                        search = "--";
-                        replaceWith = '-';
-                        handle = handle.split(search).join(replaceWith);
-                        handle = handle.toLowerCase();
+                        handle = cell[i][2]; // partscode
 
                         //make_body_html();
                         main_features = '"<b>Main Features</b><ul>';
