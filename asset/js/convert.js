@@ -80,6 +80,9 @@ function convert_file() {
         let phaseOut = cell[i][8]
         let status = phaseOut == 1 ? 'archived' : 'active'
 
+        // Get parts code
+        let partsCode = cell[i][2]
+
         //making a result line 
         line_result = "";
         inventory_line = "";
@@ -108,7 +111,7 @@ function convert_file() {
                     //first line of new product
                     {
                         //make handle();
-                        handle = cell[i][2]; // partscode
+                        handle = partsCode
 
                         //make_body_html();
                         main_features = '"<b>Main Features</b><ul>';
@@ -155,7 +158,7 @@ function convert_file() {
                             }
                         }
                         main_features += "</ul>";
-                        body_html = main_features + description + '"';
+                        body_html = main_features + description + `<b>${partsCode}</b>` + '"';
 
                         // make_published_flag();
                         if (cell[i][31] == "") { publish_flag = "FALSE"; } else { publish_flag = "TRUE"; }
