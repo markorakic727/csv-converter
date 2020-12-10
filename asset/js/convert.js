@@ -158,7 +158,7 @@ function convert_file() {
                             }
                         }
                         main_features += "</ul>";
-                        body_html = main_features + description + partsCode + '"';
+                        body_html = main_features + description + `<p class='product-description__partscode'>${partsCode}</p>` + '"';
 
                         // make_published_flag();
                         if (cell[i][31] == "") { publish_flag = "FALSE"; } else { publish_flag = "TRUE"; }
