@@ -58,7 +58,7 @@ function convert_file() {
 
             //eliminating the last ,,,,s
             if (j == tmp_cell.length - 1) {
-                tmp_cell[j] = tmp_cell[j].slice(0, (tmp_cell[j].length - 1));
+                // tmp_cell[j] = tmp_cell[j].slice(0, (tmp_cell[j].length - 1));
                 while (tmp_cell[j].slice(-1) == ",") {
                     tmp_cell[j] = tmp_cell[j].slice(0, (tmp_cell[j].length - 1));
                 }
