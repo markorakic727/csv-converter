@@ -4,7 +4,7 @@ var line_result;
 var result;
 var heading = "Handle,Title,Body (HTML),Vendor,Type,Tags,Published,Option1 Name,Option1 Value,Option2 Name,Option2 Value,Option3 Name,Option3 Value,Variant SKU,Variant Grams,Variant Inventory Tracker,Variant Inventory Qty,Variant Inventory Policy,Variant Fulfillment Service,Variant Price,Variant Compare At Price,Variant Requires Shipping,Variant Taxable,Variant Barcode,Image Src,Image Position,Image Alt Text,Gift Card,SEO Title,SEO Description,Google Shopping / Google Product Category,Google Shopping / Gender,Google Shopping / Age Group,Google Shopping / MPN,Google Shopping / AdWords Grouping,Google Shopping / AdWords Labels,Google Shopping / Condition,Google Shopping / Custom Product,Google Shopping / Custom Label 0,Google Shopping / Custom Label 1,Google Shopping / Custom Label 2,Google Shopping / Custom Label 3,Google Shopping / Custom Label 4,Variant Image,Variant Weight Unit,Variant Tax Code,Cost per item,Status";
 var img_pos;
-var handle;
+var handle, title;
 var description;
 var publish_flag;
 var props_line;
@@ -165,9 +165,12 @@ function convert_file() {
 
                         //some lines don't have image1, instead it is "\n", have to replace with ""
                         // if (cell[i][k] == "\n") cell[i][k] = "";
+                        
+                        // Get product tile
+                        title = cell[i][9] + ` ${partsCode}`
 
-                        line_result = handle + "," + cell[i][9] + "," + body_html + "," + "Tuscany Leather" + "," + cell[i][1] + "," + "" + "," + publish_flag + "," + "Color" + "," + cell[i][10] + "," + "" + "," + "" + "," + "" + "," + "" + "," + cell[i][5] + "," + cell[i][19] * 1000 + "," + "shopify" + "," + cell[i][6] + "," + "deny" + "," + "manual" + "," + cell[i][25] + "," + "" + "," + "TRUE" + "," + "FALSE" + "," + "" + "," + cell[i][k] + "," + img_pos + "," + "" + "," + "" + "," + "" + "," + "" + "," + "" + "," + "" + "," + "" + "," + "" + "," + "" + "," + "" + "," + "" + "," + "" + "," + "" + "," + "" + "," + "" + "," + "" + "," + "" + "," + cell[i][k] + "," + "Kg" + "," + "" + "," + "" + "," + status;
-                        inventory_line = handle + "," + cell[i][9] + "," + "Color" + "," + cell[i][10] + "," + "" + "," + "" + "," + "" + "," + "" + "," + cell[i][5] + "," + "," + "," + cell[i][6] + "," + "not stocked";
+                        line_result = handle + "," + title + "," + body_html + "," + "Tuscany Leather" + "," + cell[i][1] + "," + "" + "," + publish_flag + "," + "Color" + "," + cell[i][10] + "," + "" + "," + "" + "," + "" + "," + "" + "," + cell[i][5] + "," + cell[i][19] * 1000 + "," + "shopify" + "," + cell[i][6] + "," + "deny" + "," + "manual" + "," + cell[i][25] + "," + "" + "," + "TRUE" + "," + "FALSE" + "," + "" + "," + cell[i][k] + "," + img_pos + "," + "" + "," + "" + "," + "" + "," + "" + "," + "" + "," + "" + "," + "" + "," + "" + "," + "" + "," + "" + "," + "" + "," + "" + "," + "" + "," + "" + "," + "" + "," + "" + "," + "" + "," + cell[i][k] + "," + "Kg" + "," + "" + "," + "" + "," + status;
+                        inventory_line = handle + "," + title + "," + "Color" + "," + cell[i][10] + "," + "" + "," + "" + "," + "" + "," + "" + "," + cell[i][5] + "," + "," + "," + cell[i][6] + "," + "not stocked";
                         add_result();
                         add_inventory_result();
                     } else
